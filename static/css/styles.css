@@ -1,0 +1,173 @@
+
+.si-player-0.active {
+    border: 1px solid rgba(230,25,75,.8);
+    box-shadow: 0 .5rem 1rem rgba(230,25,75,.8)!important;
+}
+
+.si-player-1.active {
+    border: 1px solid rgba(60, 180, 75,.8);
+    box-shadow: 0 .5rem 1rem rgba(60, 180, 75,.8)!important;
+}
+
+.si-player-2.active {
+    border: 1px solid rgba(67, 99, 216,.8);
+    box-shadow: 0 .5rem 1rem rgba(67, 99, 216,.8)!important;
+}
+
+.si-player-3.active {
+    border: 1px solid rgba(255, 225, 25,.8);
+    box-shadow: 0 .5rem 1rem rgba(255, 225, 25,.8)!important
+}
+
+
+.si-player-4.active {
+    border: 1px solid rgba(145, 30, 180,.8);
+    box-shadow: 0 .5rem 1rem rgba(145, 30, 180,.8)!important
+}
+
+.si-player-5.active {
+    border: 1px solid rgba(245, 130, 49,.8);
+    box-shadow: 0 .5rem 1rem rgba(245, 130, 49,.8)!important
+}
+
+.si-player-6.active {
+    border: 1px solid rgba(0, 0, 117,.8);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 117,.8)!important
+}
+
+.si-player-7.active {
+    border: 1px solid rgba(154, 99, 36,.8);
+    box-shadow: 0 .5rem 1rem rgba(154, 99, 36,.8)!important
+}
+
+
+
+.si-player-0 .card-header {
+    background-color: rgba(230,25,75,.2)
+}
+
+.si-player-1 .card-header {
+    background-color: rgba(60, 180, 75,.2)
+}
+
+.si-player-2 .card-header {
+    background-color: rgba(67, 99, 216,.2)
+}
+
+.si-player-3 .card-header {
+    background-color: rgba(255, 225, 25,.2)
+}
+
+.si-player-4 .card-header {
+    background-color: rgba(145, 30, 180,.2)
+}
+
+.si-player-5 .card-header {
+    background-color: rgba(245, 130, 49,.2)
+}
+
+.si-player-6 .card-header {
+    background-color: rgba(0, 0, 117,.2)
+}
+
+.si-player-7 .card-header {
+    background-color: rgba(154, 99, 36,.2)
+}
+
+.si-player.active .card-header{
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+}
+
+.color-display h3{
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+}
+
+.si-player-0.active .card-header {
+    background-color: rgba(230,25,75,1);
+}
+
+.si-player-1.active .card-header {
+    background-color: rgba(60, 180, 75,1);
+}
+
+.si-player-2.active .card-header {
+    background-color: rgba(67, 99, 216,1);
+}
+
+.si-player-3.active .card-header {
+    background-color: rgba(255, 225, 25,1);
+}
+
+.si-player-4.active .card-header {
+    background-color: rgba(145, 30, 180,1)
+}
+
+.si-player-5.active .card-header {
+    background-color: rgba(245, 130, 49,1)
+}
+
+.si-player-6.active .card-header {
+    background-color: rgba(0, 0, 117,1)
+}
+
+.si-player-7.active .card-header {
+    background-color: rgba(154, 99, 36,1)
+}
+
+.locked {
+    opacity: 0.3;
+}
+
+.color-display {
+    height: 50px;
+    outline: 1px solid rgba(0,0,0,1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.color-display .player-name {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.queue {
+    overflow: hidden;
+}
+
+.queue > div {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+.color-0 {
+    background-color: rgba(230,25,75,1)
+}
+
+.color-1 {
+    background-color: rgba(60, 180, 75,1)
+}
+
+.color-2 {
+    background-color: rgba(67, 99, 216,1)
+}
+
+.color-3 {
+    background-color: rgba(255, 225, 25,1)
+}
+
+.color-4 {
+    background-color: rgba(145, 30, 180,1)
+}
+
+.color-5 {
+    background-color: rgba(245, 130, 49,1)
+}
+
+.color-6 {
+    background-color: rgba(0, 0, 117,1)
+}
+
+.color-7 {
+    background-color: rgba(154, 99, 36,1)
+}

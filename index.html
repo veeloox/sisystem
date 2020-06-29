@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Своя игра</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/styles.css">
+</head>
+<body>
+
+<div id="app">
+    <div class="container" style="padding-top: 50px">
+
+        <div v-bind:class="['color-' + currentPlayer]" class="mb-5 color-display shadow-sm">
+            <div class="player-name pt-1">
+                <h3> {{ currentPlayerName }} </h3>
+            </div>
+            <div class="queue">
+                <div v-for="c in pressesQueue" v-bind:class="['color-' + c]">&nbsp;</div>
+            </div>
+        </div>
+
+        <div class="card-deck mb-3 mt-5 text-center">
+            <div class="card mb-4 shadow si-player" v-for="(player, index) in players"
+                 v-bind:class="['si-player-' + index, {active: player.active}, {locked: player.locked}]">
+                <div class="card-header">
+                    <h4 v-show="!playersData[index].edit" class="my-0 font-weight-normal" style="display: inline">{{
+                        player.name }}</h4>
+                    <input v-show="playersData[index].edit" v-model="playersData[index].name" type="text"/>
+                    <i class="fas fa-edit float-right" style="opacity: 0.3" v-on:click="toggleEdit(index)"></i>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title pt-5 pb-5">
+                        {{ player.score }}
+                    </h1>
+
+                    <!--<button type="button" class="btn btn-outline-primary">-->
+                    <!--<i class="fas fa-user-edit"></i>-->
+                    <!--</button>-->
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h4>Текущий балл: {{ currentRoundPoints }}</h4>
+            <h4 v-show="gameMode === 'hamsa'">Текущий раунд: {{ pointsM }}</h4>
+
+            <div class="clearfix">
+                <button class="float-right btn btn-outline-danger my-2" v-on:click="restart">Сбросить все</button>
+                <button class="float-right btn btn-outline-primary my-2 mr-3" v-on:click="toggleSettings">Настройки
+                </button>
+            </div>
+
+            <div id="settings" v-show="showSettings">
+                <div>
+                    <label>
+                        Блокировать систему после нажатия
+                        <input type="checkbox" v-model="isBlocking">
+                    </label>
+                </div>
+
+                <div>
+
+                    <div>Режим игры</div>
+                    <div>
+                        <label>
+                            Своя игра
+                            <input type="radio" name="gm" v-model="gameMode" value="si">
+                        </label>
+                        <label>
+                            Хамса
+                            <input type="radio" name="gm" v-model="gameMode" value="hamsa">
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label>
+                        Количество игроков
+                        <input v-model.number="playersCount" type="number" max="8" min="2">
+                    </label>
+                </div>
+
+                <div>
+
+                    <div>Кнопки</div>
+                    <div>
+                        <label v-for="(value, key, index) in keyBindingSettings">
+                            Игрок {{ index + 1 }}
+                            <input type="text" maxlength="1" style="width:30px" v-model="keyBindingSettings[key]">
+                        </label>
+
+                        <label>
+                            Сброс
+                            <input type="text" maxlength="1" style="width:30px" v-model="resetKey">
+                        </label>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="./static/js/app.js"></script>
+</body>
+</html>
