@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="./static/css/styles.css">
+
+    <style>
+        .extra-button {
+            display: inline-block;
+            margin-right: 1em;
+        }
+
+    </style>
+
 </head>
 <body>
 
@@ -46,21 +55,39 @@
             </div>
         </div>
 
+        <div id="cpanel" style="position: absolute; bottom: 2em" v-show="isCPvisible">
+            <div v-on:click="reset" class="text-center extra-button"><i style="" class="fas fa-undo fa-3x"></i></div>
+            <div v-on:click="changeRound(-1)" class="text-center extra-button"><i style="" class="fas fa-arrow-left fa-3x"></i></div>
+            <div v-on:click="changeRound(1)" class="text-center extra-button"><i style="" class="fas fa-arrow-right fa-3x"></i></div>
+            <div v-on:click="changePoints(-1)" class="text-center extra-button" ><i style="" class="fas fa-minus fa-3x"></i></div>
+            <div v-on:click="changePoints(1)" class="text-center extra-button"><i style="" class="fas fa-plus fa-3x"></i></div>
+
+        </div>
+
         <div>
             <h4>Текущий балл: {{ currentRoundPoints }}</h4>
             <h4 v-show="gameMode === 'hamsa'">Текущий раунд: {{ pointsM }}</h4>
 
             <div class="clearfix">
-                <button class="float-right btn btn-outline-danger my-2" v-on:click="restart">Сбросить все</button>
-                <button class="float-right btn btn-outline-primary my-2 mr-3" v-on:click="toggleSettings">Настройки
-                </button>
+                <div class="float-right btn btn-outline-danger my-2" v-on:click="restart">Сбросить все</div>
+                <div class="float-right btn btn-outline-primary my-2 mr-3" v-on:click="toggleSettings">Настройки
+                </div>
             </div>
+
+
 
             <div id="settings" v-show="showSettings">
                 <div>
                     <label>
                         Блокировать систему после нажатия
                         <input type="checkbox" v-model="isBlocking">
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        Панель управления
+                        <input type="checkbox" v-model="isCPvisible">
                     </label>
                 </div>
 

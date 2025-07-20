@@ -53,6 +53,8 @@ window.app = new Vue({
         currentPlayerIndex: -1,
 
         showSettings: false,
+        isCPvisible: false,
+
         sounds: {
             ding: new Audio('./static/sound/ding.mp3'),
             beep: new Audio('./static/sound/beep.mp3')
@@ -113,6 +115,7 @@ window.app = new Vue({
         },
 
         changeRound: function (delta) {
+            this.reset();
             this.currentRound = ((this.currentRound + delta) + this.points.length) % this.points.length;
         },
 
