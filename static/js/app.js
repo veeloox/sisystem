@@ -115,7 +115,9 @@ window.app = new Vue({
         },
 
         changeRound: function (delta) {
-            this.reset();
+            if (!this.isBlocked && this.gameMode === 'si') {
+                this.reset();
+            }
             this.currentRound = ((this.currentRound + delta) + this.points.length) % this.points.length;
         },
 
